@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
 
 export default function Footer() {
@@ -8,9 +9,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="text-2xl font-bold mb-4">
-              <span className="font-serif text-pink-400">Pretty Tips</span>
-              <span className="ml-2 text-lg text-gray-300">by Sandali</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="https://prittytips.s3.ap-southeast-1.amazonaws.com/Logo/White+Pink+Simple+Nail+Art+Studio+Logo.png"
+                alt="Pretty Tips by Sandali Logo"
+                width={60}
+                height={60}
+                className="rounded-lg"
+              />
+              <div>
+                <div className="text-2xl font-bold">
+                  <span className="font-serif text-pink-400">Pretty Tips</span>
+                </div>
+                <span className="text-lg text-gray-300">by Sandali</span>
+              </div>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Professional nail spa services with a touch of elegance. Where
