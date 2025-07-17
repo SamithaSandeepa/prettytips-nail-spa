@@ -47,7 +47,12 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <div className="text-2xl font-bold">
-                <span className="font-serif text-pink-600">Pretty Tips</span>
+                <span
+                  className="font-dancing-script text-3xl"
+                  style={{ color: "#D56497" }}
+                >
+                  Pretty Tips
+                </span>
                 <span className="ml-2 text-lg text-gray-600">by Sandali</span>
               </div>
             </Link>
