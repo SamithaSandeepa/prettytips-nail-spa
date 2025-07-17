@@ -19,7 +19,14 @@ export default function Footer() {
               />
               <div>
                 <div className="text-2xl font-bold">
-                  <span className="font-serif text-pink-400">Pretty Tips</span>
+                  <span
+                    style={{
+                      color: "#D56497",
+                      fontFamily: "var(--font-dancing-script)",
+                    }}
+                  >
+                    Pretty Tips
+                  </span>
                 </div>
                 <span className="text-lg text-gray-300">by Sandali</span>
               </div>
@@ -31,13 +38,13 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-300 hover:text-pink-400 transition-colors"
+                className="text-gray-300 hover:text-brand-pink transition-colors"
               >
                 <Instagram className="h-6 w-6" />
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-pink-400 transition-colors"
+                className="text-gray-300 hover:text-brand-pink transition-colors"
               >
                 <Facebook className="h-6 w-6" />
               </a>
@@ -46,7 +53,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-pink-400">
+            <h3 className="text-lg font-semibold mb-4 text-brand-pink">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -95,27 +102,36 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-pink-400">
+            <h3
+              className="text-lg font-semibold mb-4"
+              style={{ color: "#D56497" }}
+            >
               Contact Info
             </h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-2">
-                <MapPin className="h-5 w-5 text-pink-400 mt-0.5" />
+                <MapPin
+                  className="h-5 w-5 mt-0.5"
+                  style={{ color: "#D56497" }}
+                />
                 <div className="text-gray-300">
                   <p>123 Beauty Lane</p>
                   <p>City, State 12345</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-pink-400" />
+                <Phone className="h-5 w-5" style={{ color: "#D56497" }} />
                 <span className="text-gray-300">(555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-5 w-5 text-pink-400" />
+                <Mail className="h-5 w-5" style={{ color: "#D56497" }} />
                 <span className="text-gray-300">info@prettytips.com</span>
               </div>
               <div className="flex items-start space-x-2">
-                <Clock className="h-5 w-5 text-pink-400 mt-0.5" />
+                <Clock
+                  className="h-5 w-5 mt-0.5"
+                  style={{ color: "#D56497" }}
+                />
                 <div className="text-gray-300">
                   <p>Mon-Sat: 9AM-7PM</p>
                   <p>Sunday: 10AM-5PM</p>

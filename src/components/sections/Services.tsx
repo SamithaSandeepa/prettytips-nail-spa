@@ -55,7 +55,7 @@ export default function Services() {
       <div className="container-padding">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Our <span className="text-pink-600">Services</span>
+            Our <span style={{ color: "#D56497" }}>Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover our comprehensive range of professional nail care services,
@@ -77,7 +77,7 @@ export default function Services() {
                 {service.description}
               </p>
               <div className="flex justify-between items-center mb-4">
-                <span className="text-pink-600 font-bold text-lg">
+                <span className="text-brand-pink font-bold text-lg">
                   {service.price}
                 </span>
                 <span className="text-gray-500 text-sm">
@@ -86,7 +86,7 @@ export default function Services() {
               </div>
               <Link
                 href="/booking"
-                className="block w-full bg-pink-600 text-white text-center py-3 rounded-full hover:bg-pink-700 transition-colors"
+                className="block w-full bg-brand-pink hover:bg-brand-pink-dark text-white text-center py-3 rounded-full transition-colors"
               >
                 Book Now
               </Link>
@@ -97,7 +97,7 @@ export default function Services() {
         <div className="text-center mt-12">
           <Link
             href="/services"
-            className="inline-block bg-transparent border-2 border-pink-600 text-pink-600 px-8 py-3 rounded-full hover:bg-pink-600 hover:text-white transition-colors text-lg"
+            className="inline-block border-2 border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-white px-8 py-3 rounded-full transition-colors text-lg"
           >
             View All Services
           </Link>

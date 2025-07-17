@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-lg">
       {/* Top Bar */}
-      <div className="bg-pink-600 py-2 text-white">
+      <div className="py-2 text-white" style={{ backgroundColor: "#D56497" }}>
         <div className="container-padding">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-4">
@@ -48,8 +48,11 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <div className="text-2xl font-bold">
                 <span
-                  className="font-dancing-script text-3xl"
-                  style={{ color: "#D56497" }}
+                  className="text-3xl"
+                  style={{
+                    color: "#D56497",
+                    fontFamily: "var(--font-dancing-script)",
+                  }}
                 >
                   Pretty Tips
                 </span>
@@ -65,8 +68,8 @@ export default function Header() {
                   href={item.href}
                   className={
                     item.isButton
-                      ? "bg-pink-600 text-white px-6 py-2 rounded-full hover:bg-pink-700 transition-colors"
-                      : "text-gray-700 hover:text-pink-600 transition-colors font-medium"
+                      ? "bg-brand-pink hover:bg-brand-pink-dark text-white px-6 py-2 rounded-full transition-colors"
+                      : "text-gray-700 hover:text-brand-pink transition-colors font-medium"
                   }
                 >
                   {item.name}
@@ -77,7 +80,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-md text-gray-700 hover:text-pink-600 hover:bg-gray-100"
+              className="md:hidden p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -98,8 +101,8 @@ export default function Header() {
                   href={item.href}
                   className={
                     item.isButton
-                      ? "block bg-pink-600 text-white px-3 py-2 rounded-md text-center font-medium"
-                      : "block px-3 py-2 rounded-md text-gray-700 hover:text-pink-600 hover:bg-gray-50 font-medium"
+                      ? "block bg-brand-pink text-white px-3 py-2 rounded-md text-center font-medium"
+                      : "block px-3 py-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-50 font-medium"
                   }
                   onClick={() => setIsMenuOpen(false)}
                 >

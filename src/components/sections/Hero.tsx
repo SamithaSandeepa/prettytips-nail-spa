@@ -20,7 +20,10 @@ export default function Hero() {
         <div className="mx-auto max-w-4xl">
           <h1 className="mb-6 font-serif text-5xl font-bold text-gray-800 md:text-7xl lg:text-8xl">
             Pretty Tips
-            <span className="mt-2 block text-3xl text-pink-600 md:text-4xl lg:text-5xl">
+            <span
+              className="mt-2 block text-3xl md:text-4xl lg:text-5xl"
+              style={{ color: "#D56497" }}
+            >
               by Sandali
             </span>
           </h1>
@@ -34,13 +37,13 @@ export default function Hero() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/booking"
-              className="inline-block bg-pink-600 text-white px-8 py-4 text-lg rounded-full hover:bg-pink-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+              className="inline-block text-white px-8 py-4 text-lg rounded-full transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 bg-brand-pink hover:bg-brand-pink-dark"
             >
               Book Appointment
             </Link>
             <Link
               href="/services"
-              className="inline-block border-2 border-pink-600 text-pink-600 px-8 py-4 text-lg rounded-full hover:bg-pink-600 hover:text-white transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+              className="inline-block border-2 px-8 py-4 text-lg rounded-full transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-white"
             >
               View Services
             </Link>
@@ -49,9 +52,13 @@ export default function Hero() {
           {/* Quick Info Cards */}
           <div className="mt-16 grid grid-cols-1 gap-6 text-center md:grid-cols-3">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-              <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "#F3D4E5" }}
+              >
                 <svg
-                  className="w-6 h-6 text-pink-600"
+                  className="w-6 h-6"
+                  style={{ color: "#D56497" }}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -67,9 +74,13 @@ export default function Hero() {
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-              <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "#F3D4E5" }}
+              >
                 <svg
-                  className="w-6 h-6 text-pink-600"
+                  className="w-6 h-6"
+                  style={{ color: "#D56497" }}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -85,9 +96,13 @@ export default function Hero() {
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-              <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "#F3D4E5" }}
+              >
                 <svg
-                  className="w-6 h-6 text-pink-600"
+                  className="w-6 h-6"
+                  style={{ color: "#D56497" }}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -107,8 +122,14 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 transform">
-        <div className="flex h-10 w-6 justify-center rounded-full border-2 border-pink-400">
-          <div className="mt-2 h-3 w-1 rounded-full bg-pink-400 animate-bounce" />
+        <div
+          className="flex h-10 w-6 justify-center rounded-full border-2"
+          style={{ borderColor: "#D56497" }}
+        >
+          <div
+            className="mt-2 h-3 w-1 rounded-full animate-bounce"
+            style={{ backgroundColor: "#D56497" }}
+          />
         </div>
       </div>
     </section>

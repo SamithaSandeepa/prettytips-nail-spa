@@ -18,7 +18,7 @@ export default function About() {
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              About <span className="text-pink-600">Sandali</span>
+              About <span style={{ color: "#D56497" }}>Sandali</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               Welcome to Pretty Tips by Sandali, where passion meets expertise
@@ -36,17 +36,28 @@ export default function About() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-pink-600 mb-2">8+</div>
+                <div
+                  className="text-3xl font-bold mb-2"
+                  style={{ color: "#D56497" }}
+                >
+                  8+
+                </div>
                 <div className="text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-pink-600 mb-2">
+                <div
+                  className="text-3xl font-bold mb-2"
+                  style={{ color: "#D56497" }}
+                >
                   500+
                 </div>
                 <div className="text-gray-600">Happy Clients</div>
               </div>
               <div className="text-center col-span-2 md:col-span-1">
-                <div className="text-3xl font-bold text-pink-600 mb-2">
+                <div
+                  className="text-3xl font-bold mb-2"
+                  style={{ color: "#D56497" }}
+                >
                   100%
                 </div>
                 <div className="text-gray-600">Satisfaction</div>
@@ -59,23 +70,35 @@ export default function About() {
                 Certifications & Training
               </h3>
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                <div
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: "#D56497" }}
+                ></div>
                 <span className="text-gray-600">Licensed Nail Technician</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                <div
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: "#D56497" }}
+                ></div>
                 <span className="text-gray-600">
                   Gel Application Specialist
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                <div
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: "#D56497" }}
+                ></div>
                 <span className="text-gray-600">
                   Nail Art Design Certificate
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                <div
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: "#D56497" }}
+                ></div>
                 <span className="text-gray-600">
                   Hygiene & Safety Certified
                 </span>
