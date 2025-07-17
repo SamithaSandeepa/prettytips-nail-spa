@@ -95,6 +95,18 @@ export async function generateMetadata({
     return {
       title: "Post Not Found | Pretty Tips by Sandali",
       description: "The requested blog post could not be found.",
+      openGraph: {
+        title: "Post Not Found | Pretty Tips by Sandali",
+        description: "The requested blog post could not be found.",
+        images: [
+          {
+            url: "https://prittytips.s3.ap-southeast-1.amazonaws.com/Logo/White+Pink+Simple+Nail+Art+Studio+Logo.png",
+            width: 800,
+            height: 600,
+            alt: "Pretty Tips by Sandali Logo",
+          },
+        ],
+      },
     };
   }
 
@@ -102,6 +114,25 @@ export async function generateMetadata({
     title: `${post.title} | Pretty Tips by Sandali`,
     description: post.excerpt,
     keywords: ["nail care", "manicure", "beauty tips", post.category],
+    openGraph: {
+      title: `${post.title} | Pretty Tips by Sandali`,
+      description: post.excerpt,
+      images: [
+        {
+          url: "https://prittytips.s3.ap-southeast-1.amazonaws.com/Logo/White+Pink+Simple+Nail+Art+Studio+Logo.png",
+          width: 800,
+          height: 600,
+          alt: "Pretty Tips by Sandali Logo",
+        },
+      ],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Pretty Tips by Sandali`,
+      description: post.excerpt,
+      images: ["https://prittytips.s3.ap-southeast-1.amazonaws.com/Logo/White+Pink+Simple+Nail+Art+Studio+Logo.png"],
+    },
   };
 }
 

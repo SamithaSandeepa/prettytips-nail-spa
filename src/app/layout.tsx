@@ -26,6 +26,29 @@ export const metadata: Metadata = {
     "nail art",
     "nail extensions",
   ],
+  openGraph: {
+    title: "Pretty Tips by Sandali | Professional Nail Spa Services",
+    description:
+      "Professional nail spa services including manicures, pedicures, gel nails, nail art, and extensions. Book your appointment today!",
+    images: [
+      {
+        url: "https://prittytips.s3.ap-southeast-1.amazonaws.com/Logo/White+Pink+Simple+Nail+Art+Studio+Logo.png",
+        width: 800,
+        height: 600,
+        alt: "Pretty Tips by Sandali Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pretty Tips by Sandali | Professional Nail Spa Services",
+    description:
+      "Professional nail spa services including manicures, pedicures, gel nails, nail art, and extensions. Book your appointment today!",
+    images: [
+      "https://prittytips.s3.ap-southeast-1.amazonaws.com/Logo/White+Pink+Simple+Nail+Art+Studio+Logo.png",
+    ],
+  },
 };
 
 export default function RootLayout({
