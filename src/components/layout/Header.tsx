@@ -46,7 +46,7 @@ export default function Header() {
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-extrabold">
                 <span
                   className="text-3xl"
                   style={{
