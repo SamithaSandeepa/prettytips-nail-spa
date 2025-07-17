@@ -33,11 +33,11 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
+      <section className="py-20 bg-gradient-to-br bg-gradient-brand-light">
         <div className="container-padding">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              Contact <span className="text-pink-600">Us</span>
+              Contact <span className="text-brand-pink">Us</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Have questions or want to book an appointment? We&apos;d love to
@@ -73,7 +73,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                   >
                     <option value="">Select a subject</option>
                     <option value="booking">Booking Inquiry</option>
@@ -135,14 +135,14 @@ export default function ContactPage() {
                     required
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                     placeholder="Write your message here..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-pink-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-pink-700 transition-colors"
+                  className="w-full bg-brand-pink text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-brand-pink-dark transition-colors"
                 >
                   Send Message
                 </button>
@@ -152,15 +152,15 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-8">
               {/* Main Contact Card */}
-              <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8">
+              <div className="bg-gradient-to-br bg-gradient-brand-light rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">
                   Get in Touch
                 </h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-pink-100 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-pink-600" />
+                    <div className="bg-brand-pink-light p-3 rounded-full">
+                      <Phone className="h-6 w-6 text-brand-pink" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800">Phone</h4>
@@ -172,8 +172,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-pink-100 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-pink-600" />
+                    <div className="bg-brand-pink-light p-3 rounded-full">
+                      <Mail className="h-6 w-6 text-brand-pink" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800">Email</h4>
@@ -185,8 +185,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-pink-100 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-pink-600" />
+                    <div className="bg-brand-pink-light p-3 rounded-full">
+                      <MapPin className="h-6 w-6 text-brand-pink" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800">Address</h4>
@@ -202,8 +202,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-pink-100 p-3 rounded-full">
-                      <Clock className="h-6 w-6 text-pink-600" />
+                    <div className="bg-brand-pink-light p-3 rounded-full">
+                      <Clock className="h-6 w-6 text-brand-pink" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800">
@@ -231,15 +231,15 @@ export default function ContactPage() {
                 <div className="flex space-x-4">
                   <a
                     href="#"
-                    className="bg-pink-100 p-3 rounded-full hover:bg-pink-200 transition-colors"
+                    className="bg-brand-pink-light p-3 rounded-full hover:bg-brand-pink transition-colors"
                   >
-                    <Instagram className="h-6 w-6 text-pink-600" />
+                    <Instagram className="h-6 w-6 text-brand-pink" />
                   </a>
                   <a
                     href="#"
-                    className="bg-pink-100 p-3 rounded-full hover:bg-pink-200 transition-colors"
+                    className="bg-brand-pink-light p-3 rounded-full hover:bg-brand-pink transition-colors"
                   >
-                    <Facebook className="h-6 w-6 text-pink-600" />
+                    <Facebook className="h-6 w-6 text-brand-pink" />
                   </a>
                 </div>
               </div>
@@ -251,22 +251,22 @@ export default function ContactPage() {
                 </h3>
                 <div className="space-y-3 text-sm text-gray-600">
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full mt-2"></div>
                     <p>
                       Book appointments 24-48 hours in advance for best
                       availability
                     </p>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full mt-2"></div>
                     <p>Follow us on social media for daily nail inspiration</p>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full mt-2"></div>
                     <p>Ask about our loyalty program for regular clients</p>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full mt-2"></div>
                     <p>Bring inspiration photos for custom nail art designs</p>
                   </div>
                 </div>

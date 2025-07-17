@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+    <section className="py-20 bg-gradient-brand text-white">
       <div className="container-padding">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -16,13 +16,13 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <Link
               href="/booking"
-              className="inline-block bg-white text-pink-600 px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+              className="inline-block bg-white text-brand-pink px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
             >
               Book Your Appointment
             </Link>
             <Link
               href="/contact"
-              className="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-full hover:bg-white hover:text-pink-600 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+              className="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-full hover:bg-white hover:text-brand-pink transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
             >
               Contact Us
             </Link>

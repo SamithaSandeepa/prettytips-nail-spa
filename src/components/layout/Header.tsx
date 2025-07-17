@@ -54,7 +54,7 @@ export default function Header() {
                     fontFamily: "var(--font-dancing-script)",
                   }}
                 >
-                  Pretty Tips
+                  Pretty tips
                 </span>
                 <span className="ml-2 text-lg text-gray-600">by Sandali</span>
               </div>

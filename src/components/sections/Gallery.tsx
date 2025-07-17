@@ -41,7 +41,7 @@ export default function Gallery() {
       <div className="container-padding">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Our <span className="text-pink-600">Gallery</span>
+            Our <span className="text-brand-pink">Gallery</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Explore our portfolio of beautiful nail designs and see the artistry
@@ -56,8 +56,8 @@ export default function Gallery() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-2 rounded-full transition-colors ${
                   selectedCategory === category.id
-                    ? "bg-pink-600 text-white"
-                    : "bg-pink-100 text-pink-600 hover:bg-pink-200"
+                    ? "bg-brand-pink text-white"
+                    : "bg-brand-pink-light text-brand-pink hover:bg-brand-pink"
                 }`}
               >
                 {category.name}
@@ -96,13 +96,13 @@ export default function Gallery() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/gallery"
-              className="inline-block bg-transparent border-2 border-pink-600 text-pink-600 px-8 py-3 rounded-full hover:bg-pink-600 hover:text-white transition-colors"
+              className="inline-block bg-transparent border-2 border-brand-pink text-brand-pink px-8 py-3 rounded-full hover:bg-brand-pink hover:text-white transition-colors"
             >
               View Full Gallery
             </Link>
             <Link
               href="/booking"
-              className="inline-block bg-pink-600 text-white px-8 py-3 rounded-full hover:bg-pink-700 transition-colors"
+              className="inline-block bg-brand-pink text-white px-8 py-3 rounded-full hover:bg-brand-pink-dark transition-colors"
             >
               Book Appointment
             </Link>

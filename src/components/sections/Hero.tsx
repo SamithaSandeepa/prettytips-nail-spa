@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-pink-100 via-white to-purple-100">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-brand-light">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

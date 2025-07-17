@@ -160,11 +160,11 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
+      <section className="py-20 bg-gradient-brand-light">
         <div className="container-padding">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              Our <span className="text-pink-600">Services</span>
+              Our <span className="text-brand-pink">Services</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive nail care services designed to pamper, beautify, and
@@ -197,7 +197,7 @@ export default function ServicesPage() {
                     <h3 className="text-xl font-bold text-gray-800">
                       {service.name}
                     </h3>
-                    <span className="text-2xl font-bold text-pink-600">
+                    <span className="text-2xl font-bold text-brand-pink">
                       {service.price}
                     </span>
                   </div>
@@ -220,7 +220,7 @@ export default function ServicesPage() {
                           key={itemIndex}
                           className="flex items-center space-x-2 text-sm text-gray-600"
                         >
-                          <div className="w-1.5 h-1.5 bg-pink-600 rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-brand-pink rounded-full"></div>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -229,7 +229,7 @@ export default function ServicesPage() {
 
                   <Link
                     href="/booking"
-                    className="block w-full bg-pink-600 text-white text-center py-3 rounded-full hover:bg-pink-700 transition-colors"
+                    className="block w-full bg-brand-pink text-white text-center py-3 rounded-full hover:bg-brand-pink-dark transition-colors"
                   >
                     Book Now
                   </Link>
@@ -257,7 +257,9 @@ export default function ServicesPage() {
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-bold text-gray-800">{addon.name}</h3>
-                  <span className="text-pink-600 font-bold">{addon.price}</span>
+                  <span className="text-brand-pink font-bold">
+                    {addon.price}
+                  </span>
                 </div>
                 <p className="text-gray-600 text-sm">{addon.description}</p>
               </div>
@@ -286,7 +288,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-pink-600 text-white">
+      <section className="py-20 bg-brand-pink text-white">
         <div className="container-padding text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Book?</h2>
           <p className="text-xl mb-8">
@@ -294,7 +296,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/booking"
-            className="inline-block bg-white text-pink-600 px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-brand-pink px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors"
           >
             Book Your Appointment
           </Link>

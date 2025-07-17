@@ -37,7 +37,7 @@ export default function BlogPreview() {
       <div className="container-padding">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Latest from Our <span className="text-pink-600">Blog</span>
+            Latest from Our <span className="text-brand-pink">Blog</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Stay updated with the latest nail trends, care tips, and tutorials
@@ -52,7 +52,7 @@ export default function BlogPreview() {
                 <div className="p-6 h-full flex flex-col">
                   <div className="text-center mb-4">
                     <div className="text-5xl mb-3">{post.image}</div>
-                    <span className="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-semibold">
+                    <span className="bg-brand-pink-light text-brand-pink px-3 py-1 rounded-full text-xs font-semibold">
                       {post.category}
                     </span>
                   </div>
@@ -67,7 +67,7 @@ export default function BlogPreview() {
                       <Calendar className="h-3 w-3" />
                       <span>{post.date}</span>
                     </div>
-                    <span className="text-pink-600 font-medium">
+                    <span className="text-brand-pink font-medium">
                       Read More →
                     </span>
                   </div>
@@ -80,7 +80,7 @@ export default function BlogPreview() {
         <div className="text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-full hover:bg-pink-700 transition-colors text-lg font-semibold"
+            className="inline-flex items-center bg-brand-pink text-white px-8 py-4 rounded-full hover:bg-brand-pink-dark transition-colors text-lg font-semibold"
           >
             View All Blog Posts
             <ArrowRight className="ml-2 h-5 w-5" />

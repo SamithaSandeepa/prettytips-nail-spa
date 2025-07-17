@@ -101,11 +101,11 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
+      <section className="py-20 bg-gradient-brand-light">
         <div className="container-padding">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              Nail <span className="text-pink-600">Blog</span>
+              Nail <span className="text-brand-pink">Blog</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Tips, trends, tutorials, and behind-the-scenes stories from Pretty
@@ -124,11 +124,11 @@ export default function BlogPage() {
             </h2>
             <div className="max-w-4xl mx-auto">
               <Link href={`/blog/${featuredPost.id}`}>
-                <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="bg-gradient-brand-light rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className="p-8 md:p-12">
                     <div className="text-center mb-8">
                       <div className="text-8xl mb-4">{featuredPost.image}</div>
-                      <span className="bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                      <span className="bg-brand-pink text-white px-4 py-2 rounded-full text-sm font-semibold">
                         Featured
                       </span>
                     </div>
@@ -167,8 +167,8 @@ export default function BlogPage() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? "bg-pink-600 text-white shadow-lg"
-                    : "bg-white text-pink-600 hover:bg-pink-100 border border-pink-200"
+                    ? "bg-brand-pink text-white shadow-lg"
+                    : "bg-white text-brand-pink hover:bg-brand-pink-light border border-brand-pink"
                 }`}
               >
                 {category.name}
@@ -191,7 +191,7 @@ export default function BlogPage() {
                   <div className="p-6">
                     <div className="text-center mb-4">
                       <div className="text-6xl mb-3">{post.image}</div>
-                      <span className="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="bg-brand-pink-light text-brand-pink px-3 py-1 rounded-full text-xs font-semibold">
                         {
                           categories.find((cat) => cat.id === post.category)
                             ?.name
@@ -228,7 +228,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-brand text-white">
         <div className="container-padding">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Stay Updated!</h2>
@@ -242,7 +242,7 @@ export default function BlogPage() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-white"
               />
-              <button className="bg-white text-pink-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-brand-pink px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
                 Subscribe
               </button>
             </div>

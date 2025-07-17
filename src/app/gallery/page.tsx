@@ -194,11 +194,11 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
+      <section className="py-20 bg-gradient-brand-light">
         <div className="container-padding">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              Our <span className="text-pink-600">Gallery</span>
+              Our <span className="text-brand-pink">Gallery</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Explore our portfolio of beautiful nail designs and see the
@@ -219,8 +219,8 @@ export default function GalleryPage() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? "bg-pink-600 text-white shadow-lg"
-                    : "bg-pink-100 text-pink-600 hover:bg-pink-200"
+                    ? "bg-brand-pink text-white shadow-lg"
+                    : "bg-brand-pink-light text-brand-pink hover:bg-brand-pink hover:text-white"
                 }`}
               >
                 {category.name} ({category.count})
@@ -254,7 +254,7 @@ export default function GalleryPage() {
 
                 {/* Category Badge */}
                 <div className="absolute top-4 right-4">
-                  <span className="bg-white/90 text-pink-600 px-3 py-1 rounded-full text-xs font-semibold">
+                  <span className="bg-white/90 text-brand-pink px-3 py-1 rounded-full text-xs font-semibold">
                     {categories.find((cat) => cat.id === item.category)?.name}
                   </span>
                 </div>
@@ -286,19 +286,23 @@ export default function GalleryPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-pink-600 mb-2">500+</div>
+              <div className="text-4xl font-bold text-brand-pink mb-2">
+                500+
+              </div>
               <div className="text-gray-600">Happy Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-pink-600 mb-2">1000+</div>
+              <div className="text-4xl font-bold text-brand-pink mb-2">
+                1000+
+              </div>
               <div className="text-gray-600">Nail Designs</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-pink-600 mb-2">8+</div>
+              <div className="text-4xl font-bold text-brand-pink mb-2">8+</div>
               <div className="text-gray-600">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-pink-600 mb-2">98%</div>
+              <div className="text-4xl font-bold text-brand-pink mb-2">98%</div>
               <div className="text-gray-600">Satisfaction Rate</div>
             </div>
           </div>
@@ -306,7 +310,7 @@ export default function GalleryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-pink-600 text-white">
+      <section className="py-20 bg-brand-pink text-white">
         <div className="container-padding text-center">
           <h2 className="text-4xl font-bold mb-6">Love What You See?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -317,13 +321,13 @@ export default function GalleryPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/booking"
-              className="inline-block bg-white text-pink-600 px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-brand-pink px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors"
             >
               Book Your Appointment
             </a>
             <a
               href="/contact"
-              className="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-full hover:bg-white hover:text-pink-600 transition-colors"
+              className="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-full hover:bg-white hover:text-brand-pink transition-colors"
             >
               Ask About Custom Designs
             </a>

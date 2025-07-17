@@ -71,11 +71,11 @@ export default function BookingPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
+      <section className="py-20 bg-gradient-brand-light">
         <div className="container-padding">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              Book Your <span className="text-pink-600">Appointment</span>
+              Book Your <span className="text-brand-pink">Appointment</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Schedule your perfect nail care experience. We&apos;ll confirm
@@ -111,7 +111,7 @@ export default function BookingPage() {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -130,7 +130,7 @@ export default function BookingPage() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -149,7 +149,7 @@ export default function BookingPage() {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -167,7 +167,7 @@ export default function BookingPage() {
                       required
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                     >
                       <option value="">Choose a service</option>
                       {services.map((service, index) => (
@@ -194,7 +194,7 @@ export default function BookingPage() {
                         value={formData.date}
                         onChange={handleInputChange}
                         min={new Date().toISOString().split("T")[0]}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                       />
                     </div>
 
@@ -211,7 +211,7 @@ export default function BookingPage() {
                         required
                         value={formData.time}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                       >
                         <option value="">Select time</option>
                         {timeSlots.map((time, index) => (
@@ -236,14 +236,14 @@ export default function BookingPage() {
                       rows={4}
                       value={formData.notes}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
                       placeholder="Any special requests, allergies, or additional information..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-pink-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-pink-700 transition-colors"
+                    className="w-full bg-brand-pink text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-brand-pink-dark transition-colors"
                   >
                     Submit Booking Request
                   </button>
@@ -253,13 +253,13 @@ export default function BookingPage() {
               {/* Info Panel */}
               <div className="space-y-8">
                 {/* Contact Info */}
-                <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8">
+                <div className="bg-gradient-brand-light rounded-2xl p-8">
                   <h3 className="text-2xl font-bold text-gray-800 mb-6">
                     Contact Information
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-brand-pink-light rounded-full flex items-center justify-center">
                         📞
                       </div>
                       <div>
@@ -268,7 +268,7 @@ export default function BookingPage() {
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-brand-pink-light rounded-full flex items-center justify-center">
                         📧
                       </div>
                       <div>
@@ -277,7 +277,7 @@ export default function BookingPage() {
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-brand-pink-light rounded-full flex items-center justify-center">
                         📍
                       </div>
                       <div>
