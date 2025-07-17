@@ -1,95 +1,102 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Calendar, User, Tag } from 'lucide-react';
+import { useState } from "react";
+import Link from "next/link";
+import { Calendar, User } from "lucide-react";
 
 export default function BlogPage() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const categories = [
-    { id: 'all', name: 'All Posts' },
-    { id: 'trends', name: 'Trends' },
-    { id: 'tutorials', name: 'Tutorials' },
-    { id: 'care', name: 'Nail Care' },
-    { id: 'business', name: 'Behind the Scenes' },
+    { id: "all", name: "All Posts" },
+    { id: "trends", name: "Trends" },
+    { id: "tutorials", name: "Tutorials" },
+    { id: "care", name: "Nail Care" },
+    { id: "business", name: "Behind the Scenes" },
   ];
 
   const blogPosts = [
     {
-      id: 'spring-2025-nail-trends',
-      title: 'Spring 2025 Nail Color Trends You Need to Try',
-      excerpt: 'Discover the hottest nail colors and designs that are taking over this spring season.',
-      category: 'trends',
-      date: 'March 15, 2025',
-      author: 'Sandali',
-      readTime: '5 min read',
-      image: '🌸',
+      id: "spring-2025-nail-trends",
+      title: "Spring 2025 Nail Color Trends You Need to Try",
+      excerpt:
+        "Discover the hottest nail colors and designs that are taking over this spring season.",
+      category: "trends",
+      date: "March 15, 2025",
+      author: "Sandali",
+      readTime: "5 min read",
+      image: "🌸",
       featured: true,
     },
     {
-      id: 'manicure-last-longer',
-      title: '7 Pro Tips to Make Your Manicure Last 2+ Weeks',
-      excerpt: 'Learn the secrets that nail technicians use to extend the life of your manicure.',
-      category: 'care',
-      date: 'March 10, 2025',
-      author: 'Sandali',
-      readTime: '8 min read',
-      image: '💅',
+      id: "manicure-last-longer",
+      title: "7 Pro Tips to Make Your Manicure Last 2+ Weeks",
+      excerpt:
+        "Learn the secrets that nail technicians use to extend the life of your manicure.",
+      category: "care",
+      date: "March 10, 2025",
+      author: "Sandali",
+      readTime: "8 min read",
+      image: "💅",
       featured: false,
     },
     {
-      id: 'nail-art-basics',
-      title: 'Nail Art for Beginners: Simple Designs You Can Do at Home',
-      excerpt: 'Start your nail art journey with these easy-to-follow designs and techniques.',
-      category: 'tutorials',
-      date: 'March 5, 2025',
-      author: 'Sandali',
-      readTime: '10 min read',
-      image: '🎨',
+      id: "nail-art-basics",
+      title: "Nail Art for Beginners: Simple Designs You Can Do at Home",
+      excerpt:
+        "Start your nail art journey with these easy-to-follow designs and techniques.",
+      category: "tutorials",
+      date: "March 5, 2025",
+      author: "Sandali",
+      readTime: "10 min read",
+      image: "🎨",
       featured: false,
     },
     {
-      id: 'nail-health-guide',
-      title: 'The Complete Guide to Healthy Nails: What You Need to Know',
-      excerpt: 'Everything about maintaining strong, healthy nails from cuticle care to nutrition.',
-      category: 'care',
-      date: 'February 28, 2025',
-      author: 'Sandali',
-      readTime: '12 min read',
-      image: '🌿',
+      id: "nail-health-guide",
+      title: "The Complete Guide to Healthy Nails: What You Need to Know",
+      excerpt:
+        "Everything about maintaining strong, healthy nails from cuticle care to nutrition.",
+      category: "care",
+      date: "February 28, 2025",
+      author: "Sandali",
+      readTime: "12 min read",
+      image: "🌿",
       featured: false,
     },
     {
-      id: 'day-in-life-nail-tech',
-      title: 'A Day in the Life of a Nail Technician',
-      excerpt: 'Ever wondered what goes on behind the scenes at Pretty Tips? Take a peek!',
-      category: 'business',
-      date: 'February 20, 2025',
-      author: 'Sandali',
-      readTime: '6 min read',
-      image: '👩‍💼',
+      id: "day-in-life-nail-tech",
+      title: "A Day in the Life of a Nail Technician",
+      excerpt:
+        "Ever wondered what goes on behind the scenes at Pretty Tips? Take a peek!",
+      category: "business",
+      date: "February 20, 2025",
+      author: "Sandali",
+      readTime: "6 min read",
+      image: "👩‍💼",
       featured: false,
     },
     {
-      id: 'gel-vs-regular-polish',
-      title: 'Gel Polish vs Regular Polish: Which is Right for You?',
-      excerpt: 'Compare the pros and cons of gel and regular polish to make the best choice.',
-      category: 'care',
-      date: 'February 15, 2025',
-      author: 'Sandali',
-      readTime: '7 min read',
-      image: '✨',
+      id: "gel-vs-regular-polish",
+      title: "Gel Polish vs Regular Polish: Which is Right for You?",
+      excerpt:
+        "Compare the pros and cons of gel and regular polish to make the best choice.",
+      category: "care",
+      date: "February 15, 2025",
+      author: "Sandali",
+      readTime: "7 min read",
+      image: "✨",
       featured: false,
     },
   ];
 
-  const filteredPosts = selectedCategory === 'all' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+  const filteredPosts =
+    selectedCategory === "all"
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === selectedCategory);
 
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = blogPosts.filter(post => !post.featured);
+  const featuredPost = blogPosts.find((post) => post.featured);
+  const regularPosts = blogPosts.filter((post) => !post.featured);
 
   return (
     <div className="min-h-screen">
@@ -101,8 +108,8 @@ export default function BlogPage() {
               Nail <span className="text-pink-600">Blog</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Tips, trends, tutorials, and behind-the-scenes stories from Pretty Tips. 
-              Your ultimate guide to beautiful, healthy nails.
+              Tips, trends, tutorials, and behind-the-scenes stories from Pretty
+              Tips. Your ultimate guide to beautiful, healthy nails.
             </p>
           </div>
         </div>
@@ -112,7 +119,9 @@ export default function BlogPage() {
       {featuredPost && (
         <section className="py-20 bg-white">
           <div className="container-padding">
-            <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">Featured Post</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">
+              Featured Post
+            </h2>
             <div className="max-w-4xl mx-auto">
               <Link href={`/blog/${featuredPost.id}`}>
                 <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -158,8 +167,8 @@ export default function BlogPage() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-pink-600 text-white shadow-lg'
-                    : 'bg-white text-pink-600 hover:bg-pink-100 border border-pink-200'
+                    ? "bg-pink-600 text-white shadow-lg"
+                    : "bg-white text-pink-600 hover:bg-pink-100 border border-pink-200"
                 }`}
               >
                 {category.name}
@@ -173,14 +182,20 @@ export default function BlogPage() {
       <section className="py-20 bg-white">
         <div className="container-padding">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(selectedCategory === 'all' ? regularPosts : filteredPosts.filter(post => !post.featured)).map((post) => (
+            {(selectedCategory === "all"
+              ? regularPosts
+              : filteredPosts.filter((post) => !post.featured)
+            ).map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
                 <article className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                   <div className="p-6">
                     <div className="text-center mb-4">
                       <div className="text-6xl mb-3">{post.image}</div>
                       <span className="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-semibold">
-                        {categories.find(cat => cat.id === post.category)?.name}
+                        {
+                          categories.find((cat) => cat.id === post.category)
+                            ?.name
+                        }
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2">
@@ -204,7 +219,9 @@ export default function BlogPage() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">No posts found in this category.</p>
+              <p className="text-gray-500 text-lg">
+                No posts found in this category.
+              </p>
             </div>
           )}
         </div>
@@ -216,7 +233,8 @@ export default function BlogPage() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Stay Updated!</h2>
             <p className="text-xl mb-8 opacity-90">
-              Subscribe to our newsletter for the latest nail trends, tips, and exclusive offers.
+              Subscribe to our newsletter for the latest nail trends, tips, and
+              exclusive offers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input

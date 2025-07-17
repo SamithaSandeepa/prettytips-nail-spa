@@ -1,18 +1,20 @@
-import Link from 'next/link';
-import { Calendar, User, ArrowLeft, Tag } from 'lucide-react';
+import Link from "next/link";
+import { Calendar, User, ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
 
 // This would typically come from a CMS or database
 const getBlogPost = (slug: string) => {
   const posts = {
-    'spring-2025-nail-trends': {
-      id: 'spring-2025-nail-trends',
-      title: 'Spring 2025 Nail Color Trends You Need to Try',
-      excerpt: 'Discover the hottest nail colors and designs that are taking over this spring season.',
-      category: 'trends',
-      date: 'March 15, 2025',
-      author: 'Sandali',
-      readTime: '5 min read',
-      image: '🌸',
+    "spring-2025-nail-trends": {
+      id: "spring-2025-nail-trends",
+      title: "Spring 2025 Nail Color Trends You Need to Try",
+      excerpt:
+        "Discover the hottest nail colors and designs that are taking over this spring season.",
+      category: "trends",
+      date: "March 15, 2025",
+      author: "Sandali",
+      readTime: "5 min read",
+      image: "🌸",
       content: `
         <p>Spring is here, and with it comes a fresh palette of stunning nail colors that are perfect for the season! As a professional nail technician, I'm excited to share the top trends that I'm seeing in my salon and across the beauty industry.</p>
 
@@ -37,17 +39,18 @@ const getBlogPost = (slug: string) => {
         </ul>
 
         <p>Ready to try these spring trends? Book your appointment at Pretty Tips and let's create the perfect spring manicure for you!</p>
-      `
+      `,
     },
-    'manicure-last-longer': {
-      id: 'manicure-last-longer',
-      title: '7 Pro Tips to Make Your Manicure Last 2+ Weeks',
-      excerpt: 'Learn the secrets that nail technicians use to extend the life of your manicure.',
-      category: 'care',
-      date: 'March 10, 2025',
-      author: 'Sandali',
-      readTime: '8 min read',
-      image: '💅',
+    "manicure-last-longer": {
+      id: "manicure-last-longer",
+      title: "7 Pro Tips to Make Your Manicure Last 2+ Weeks",
+      excerpt:
+        "Learn the secrets that nail technicians use to extend the life of your manicure.",
+      category: "care",
+      date: "March 10, 2025",
+      author: "Sandali",
+      readTime: "8 min read",
+      image: "💅",
       content: `
         <p>Nothing is more frustrating than spending money on a beautiful manicure only to have it chip within a few days. As a professional nail technician with over 8 years of experience, I'm sharing my top secrets for making your manicure last 2+ weeks!</p>
 
@@ -73,23 +76,57 @@ const getBlogPost = (slug: string) => {
         <p>Apply cuticle oil daily and reapply top coat every 3-4 days to maintain the shine and protection.</p>
 
         <p>Follow these professional tips, and I guarantee your manicure will last much longer! For the best results, book a professional manicure at Pretty Tips where we use only premium products and techniques.</p>
-      `
-    }
+      `,
+    },
   };
 
   return posts[slug as keyof typeof posts] || null;
 };
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getBlogPost(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found | Pretty Tips by Sandali",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: `${post.title} | Pretty Tips by Sandali`,
+    description: post.excerpt,
+    keywords: ["nail care", "manicure", "beauty tips", post.category],
+  };
+}
+
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Post Not Found</h1>
-          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
-          <Link href="/blog" className="bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700 transition-colors">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            Post Not Found
+          </h1>
+          <p className="text-gray-600 mb-8">
+            The blog post you&apos;re looking for doesn&apos;t exist.
+          </p>
+          <Link
+            href="/blog"
+            className="bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700 transition-colors"
+          >
             Back to Blog
           </Link>
         </div>
@@ -103,11 +140,14 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
         <div className="container-padding">
           <div className="max-w-4xl mx-auto">
-            <Link href="/blog" className="inline-flex items-center text-pink-600 hover:text-pink-700 mb-8">
+            <Link
+              href="/blog"
+              className="inline-flex items-center text-pink-600 hover:text-pink-700 mb-8"
+            >
               <ArrowLeft className="h-5 w-5 mr-2" />
               Back to Blog
             </Link>
-            
+
             <div className="text-center">
               <div className="text-8xl mb-6">{post.image}</div>
               <span className="bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 inline-block">
@@ -136,12 +176,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <section className="py-20 bg-white">
         <div className="container-padding">
           <div className="max-w-3xl mx-auto">
-            <div 
+            <div
               className="prose prose-lg max-w-none"
               style={{
-                fontSize: '1.125rem',
-                lineHeight: '1.75',
-                color: '#374151'
+                fontSize: "1.125rem",
+                lineHeight: "1.75",
+                color: "#374151",
               }}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
@@ -160,13 +200,16 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">Sandali</h3>
-                  <p className="text-gray-600">Professional Nail Technician & Owner</p>
+                  <p className="text-gray-600">
+                    Professional Nail Technician & Owner
+                  </p>
                 </div>
               </div>
               <p className="text-gray-600">
-                With over 8 years of experience in the nail industry, Sandali is passionate about 
-                creating beautiful nails and sharing her knowledge with clients. She specializes 
-                in gel applications, nail art, and helping clients maintain healthy, strong nails.
+                With over 8 years of experience in the nail industry, Sandali is
+                passionate about creating beautiful nails and sharing her
+                knowledge with clients. She specializes in gel applications,
+                nail art, and helping clients maintain healthy, strong nails.
               </p>
             </div>
           </div>
@@ -188,7 +231,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     Nail Art for Beginners: Simple Designs You Can Do at Home
                   </h3>
                   <p className="text-gray-600">
-                    Start your nail art journey with these easy-to-follow designs and techniques.
+                    Start your nail art journey with these easy-to-follow
+                    designs and techniques.
                   </p>
                 </div>
               </Link>
@@ -199,7 +243,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     The Complete Guide to Healthy Nails: What You Need to Know
                   </h3>
                   <p className="text-gray-600">
-                    Everything about maintaining strong, healthy nails from cuticle care to nutrition.
+                    Everything about maintaining strong, healthy nails from
+                    cuticle care to nutrition.
                   </p>
                 </div>
               </Link>
@@ -211,11 +256,14 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       {/* CTA Section */}
       <section className="py-20 bg-pink-600 text-white">
         <div className="container-padding text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Book Your Appointment?</h2>
+          <h2 className="text-4xl font-bold mb-6">
+            Ready to Book Your Appointment?
+          </h2>
           <p className="text-xl mb-8 opacity-90">
-            Let's bring these nail trends to life! Book your appointment today.
+            Let&apos;s bring these nail trends to life! Book your appointment
+            today.
           </p>
-          <Link 
+          <Link
             href="/booking"
             className="inline-block bg-white text-pink-600 px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors"
           >

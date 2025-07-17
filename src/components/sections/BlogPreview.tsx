@@ -1,32 +1,35 @@
-import Link from 'next/link';
-import { Calendar, ArrowRight } from 'lucide-react';
+import Link from "next/link";
+import { Calendar, ArrowRight } from "lucide-react";
 
 export default function BlogPreview() {
   const featuredPosts = [
     {
-      id: 'spring-2025-nail-trends',
-      title: 'Spring 2025 Nail Color Trends You Need to Try',
-      excerpt: 'Discover the hottest nail colors and designs that are taking over this spring season.',
-      date: 'March 15, 2025',
-      image: '🌸',
-      category: 'Trends'
+      id: "spring-2025-nail-trends",
+      title: "Spring 2025 Nail Color Trends You Need to Try",
+      excerpt:
+        "Discover the hottest nail colors and designs that are taking over this spring season.",
+      date: "March 15, 2025",
+      image: "🌸",
+      category: "Trends",
     },
     {
-      id: 'manicure-last-longer',
-      title: '7 Pro Tips to Make Your Manicure Last 2+ Weeks',
-      excerpt: 'Learn the secrets that nail technicians use to extend the life of your manicure.',
-      date: 'March 10, 2025',
-      image: '💅',
-      category: 'Care Tips'
+      id: "manicure-last-longer",
+      title: "7 Pro Tips to Make Your Manicure Last 2+ Weeks",
+      excerpt:
+        "Learn the secrets that nail technicians use to extend the life of your manicure.",
+      date: "March 10, 2025",
+      image: "💅",
+      category: "Care Tips",
     },
     {
-      id: 'nail-art-basics',
-      title: 'Nail Art for Beginners: Simple Designs You Can Do at Home',
-      excerpt: 'Start your nail art journey with these easy-to-follow designs and techniques.',
-      date: 'March 5, 2025',
-      image: '🎨',
-      category: 'Tutorials'
-    }
+      id: "nail-art-basics",
+      title: "Nail Art for Beginners: Simple Designs You Can Do at Home",
+      excerpt:
+        "Start your nail art journey with these easy-to-follow designs and techniques.",
+      date: "March 5, 2025",
+      image: "🎨",
+      category: "Tutorials",
+    },
   ];
 
   return (
@@ -37,7 +40,7 @@ export default function BlogPreview() {
             Latest from Our <span className="text-pink-600">Blog</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with the latest nail trends, care tips, and tutorials 
+            Stay updated with the latest nail trends, care tips, and tutorials
             from our professional nail technician.
           </p>
         </div>
@@ -64,7 +67,9 @@ export default function BlogPreview() {
                       <Calendar className="h-3 w-3" />
                       <span>{post.date}</span>
                     </div>
-                    <span className="text-pink-600 font-medium">Read More →</span>
+                    <span className="text-pink-600 font-medium">
+                      Read More →
+                    </span>
                   </div>
                 </div>
               </article>
@@ -73,7 +78,7 @@ export default function BlogPreview() {
         </div>
 
         <div className="text-center">
-          <Link 
+          <Link
             href="/blog"
             className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-full hover:bg-pink-700 transition-colors text-lg font-semibold"
           >
