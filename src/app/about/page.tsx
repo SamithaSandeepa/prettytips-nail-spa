@@ -6,7 +6,7 @@ export default function AboutPage() {
         <div className="container-padding">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              About <span className="text-pink-600">Sandali</span>
+              About <span className="text-brand-pink">Sandali</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Passionate nail artist dedicated to creating beautiful, healthy
@@ -115,17 +115,17 @@ export default function AboutPage() {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full"></div>
                     <span>
                       Licensed Nail Technician - State Board Certified
                     </span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full"></div>
                     <span>Hygiene & Safety Certification</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full"></div>
                     <span>Business License & Insurance</span>
                   </li>
                 </ul>
@@ -137,15 +137,15 @@ export default function AboutPage() {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full"></div>
                     <span>Gel Application & Extensions Specialist</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full"></div>
                     <span>Advanced Nail Art & Design Certificate</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-pink-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-pink rounded-full"></div>
                     <span>Customer Service Excellence Training</span>
                   </li>
                 </ul>
