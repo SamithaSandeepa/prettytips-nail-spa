@@ -1,52 +1,49 @@
 import Link from "next/link";
+import { WHATSAPP } from "@/lib/constants";
 
 export default function Services() {
   const services = [
     {
-      title: "Classic Manicure",
-      description:
-        "Traditional nail care with cuticle care, shaping, and polish application.",
-      price: "From $25",
-      duration: "45 min",
+      title: "Normal Color (Full Set)",
+      description: "Complete nail set with normal color polish.",
+      price: "Rs.900.00",
+      duration: "90 min",
       image: "💅",
     },
     {
-      title: "Gel Manicure",
-      description:
-        "Long-lasting gel polish that maintains shine for up to 3 weeks.",
-      price: "From $35",
-      duration: "60 min",
+      title: "Gel Full Set",
+      description: "Professional gel full set with long-lasting shine.",
+      price: "Rs.4100.00",
+      duration: "120 min",
       image: "✨",
     },
     {
+      title: "Gel-X Full Set",
+      description: "Modern Gel-X extension system for natural look.",
+      price: "Rs.3000.00",
+      duration: "120 min",
+      image: "💎",
+    },
+    {
       title: "Pedicure",
-      description:
-        "Relaxing foot treatment with exfoliation, massage, and polish.",
-      price: "From $40",
+      description: "Relaxing foot treatment and care.",
+      price: "Rs.1800.00",
       duration: "60 min",
       image: "🦶",
     },
     {
-      title: "Nail Art",
-      description:
-        "Custom designs and artistic nail decorations for special occasions.",
-      price: "From $15",
+      title: "Manicure",
+      description: "Professional hand care and nail shaping.",
+      price: "Rs.1650.00",
+      duration: "45 min",
+      image: "🌸",
+    },
+    {
+      title: "3D Nail Art (Add-on)",
+      description: "Intricate 3D designs for unique nails.",
+      price: "Rs.650.00",
       duration: "30 min",
       image: "🎨",
-    },
-    {
-      title: "Gel Extensions",
-      description: "Professional nail extensions for length and strength.",
-      price: "From $55",
-      duration: "90 min",
-      image: "💎",
-    },
-    {
-      title: "Spa Package",
-      description: "Complete hand and foot treatment with luxury care.",
-      price: "From $80",
-      duration: "120 min",
-      image: "🌸",
     },
   ];
 
@@ -58,8 +55,7 @@ export default function Services() {
             Our <span style={{ color: "#D56497" }}>Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our comprehensive range of professional nail care services,
-            designed to pamper and beautify your hands and feet.
+            Discover our range of professional nail care services.
           </p>
         </div>
 
@@ -84,12 +80,14 @@ export default function Services() {
                   {service.duration}
                 </span>
               </div>
-              <Link
-                href="/booking"
+              <a
+                href={WHATSAPP.buildServiceMessageLink(service.title)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full bg-brand-pink hover:bg-brand-pink-dark text-white text-center py-3 rounded-full transition-colors"
               >
-                Book Now
-              </Link>
+                Book on WhatsApp
+              </a>
             </div>
           ))}
         </div>
@@ -99,7 +97,7 @@ export default function Services() {
             href="/services"
             className="inline-block border-2 border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-white px-8 py-3 rounded-full transition-colors text-lg"
           >
-            View All Services
+            View Full Price List
           </Link>
         </div>
       </div>

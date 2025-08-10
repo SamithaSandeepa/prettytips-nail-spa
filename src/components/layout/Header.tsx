@@ -3,19 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Phone, MapPin } from "lucide-react";
+import { NAVIGATION_ITEMS, CONTACT_INFO } from "@/lib/constants";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigation = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
-    { name: "Book Now", href: "/booking", isButton: true },
-  ];
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-lg">
@@ -26,15 +17,22 @@ export default function Header() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1">
                 <Phone className="h-3 w-3" />
-                <span>(555) 123-4567</span>
+                <span>{CONTACT_INFO.phone}</span>
               </div>
               <div className="flex items-center space-x-1">
                 <MapPin className="h-3 w-3" />
-                <span>123 Beauty Lane, City, State</span>
+                <a
+                  href={CONTACT_INFO.address.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {CONTACT_INFO.address.full}
+                </a>
               </div>
             </div>
             <div className="hidden md:block">
-              <span>Open: Mon-Sat 9AM-7PM | Sun 10AM-5PM</span>
+              <span>Book your appointment today</span>
             </div>
           </div>
         </div>
@@ -62,7 +60,7 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navigation.map((item) => (
+              {NAVIGATION_ITEMS.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
@@ -95,7 +93,7 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-              {navigation.map((item) => (
+              {NAVIGATION_ITEMS.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}

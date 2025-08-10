@@ -1,17 +1,20 @@
 // Contact Information
 export const CONTACT_INFO = {
-  phone: "(555) 123-4567",
-  email: "info@prettytips.com",
+  phone: "076-2458004",
+  email: "info@prettytips.lk",
   address: {
-    street: "123 Beauty Lane",
-    city: "City",
-    state: "State",
-    zip: "12345",
-    full: "123 Beauty Lane, City, State 12345",
+    street: "",
+    city: "Sri Lanka",
+    state: "",
+    zip: "",
+    full: "Kadawatha Road, Sri Lanka",
+    mapUrl:
+      "https://maps.apple.com/place?address=Kadawatha%20Road,%20Sri%20Lanka&coordinate=7.335300,79.841600&name=Kadawatha%20Road&map=explore",
   },
   social: {
-    instagram: "#",
-    facebook: "#",
+    instagram: "prettytips.lk",
+    facebook: "Pretty tips by Sandali",
+    tiktokUrl: "https://www.tiktok.com/@prettytips.lk?lang=en-GB",
   },
 };
 
@@ -26,89 +29,124 @@ export const BUSINESS_HOURS = {
   sunday: "10:00 AM - 5:00 PM",
 };
 
-// Navigation Items
+// Navigation Items - Simplified for initial launch
 export const NAVIGATION_ITEMS = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
   { name: "Book Now", href: "/booking", isButton: true },
 ];
 
-// Services Data
+// Services Data - From Pretty Tips by Sandali Price List
 export const SERVICES = [
   {
-    category: "Manicure",
+    category: "Full Set",
     items: [
       {
-        name: "Classic Manicure",
-        price: "$25",
-        duration: "45 min",
-        description:
-          "Traditional nail care with cuticle care, shaping, and polish application.",
-      },
-      {
-        name: "Gel Manicure",
-        price: "$35",
-        duration: "60 min",
-        description:
-          "Long-lasting gel polish that maintains shine for up to 3 weeks.",
-      },
-      {
-        name: "French Manicure",
-        price: "$30",
-        duration: "50 min",
-        description:
-          "Elegant classic French tips with natural or colored base.",
-      },
-    ],
-  },
-  {
-    category: "Pedicure",
-    items: [
-      {
-        name: "Classic Pedicure",
-        price: "$40",
-        duration: "60 min",
-        description: "Relaxing foot treatment with exfoliation and massage.",
-      },
-      {
-        name: "Spa Pedicure",
-        price: "$55",
-        duration: "75 min",
-        description:
-          "Luxurious treatment with extended massage and premium products.",
-      },
-      {
-        name: "Gel Pedicure",
-        price: "$50",
-        duration: "70 min",
-        description: "Long-lasting gel polish for your toes.",
-      },
-    ],
-  },
-  {
-    category: "Extensions & Art",
-    items: [
-      {
-        name: "Gel Extensions",
-        price: "$55",
+        name: "Normal Color",
+        price: "Rs.900.00",
         duration: "90 min",
-        description: "Professional nail extensions for length and strength.",
+        description: "Complete nail set with normal color polish application.",
       },
       {
-        name: "Nail Art",
-        price: "From $15",
-        duration: "30-60 min",
-        description: "Custom designs and artistic decorations.",
+        name: "Gel Full Set",
+        price: "Rs.4100.00",
+        duration: "120 min",
+        description: "Professional gel full set with long-lasting finish.",
       },
       {
-        name: "Nail Repair",
-        price: "$15",
+        name: "Gel-X Full Set",
+        price: "Rs.3000.00",
+        duration: "120 min",
+        description: "Modern Gel-X extension system for natural-looking nails.",
+      },
+      {
+        name: "Gel Color",
+        price: "Rs.1000.00",
+        duration: "60 min",
+        description: "Gel color application for vibrant, long-lasting nails.",
+      },
+      {
+        name: "Soak-Off",
+        price: "Rs.1200.00",
+        duration: "45 min",
+        description: "Safe and gentle removal of gel polish or extensions.",
+      },
+      {
+        name: "Refill",
+        price: "Rs.2000.00",
+        duration: "90 min",
+        description: "Maintenance and refill for existing nail extensions.",
+      },
+    ],
+  },
+  {
+    category: "Add-ons",
+    items: [
+      {
+        name: "Charms",
+        price: "Rs.500.00",
+        duration: "15 min",
+        description: "Beautiful nail charms for added elegance.",
+      },
+      {
+        name: "Glitter",
+        price: "Rs.550.00",
+        duration: "15 min",
+        description: "Sparkling glitter finish for glamorous nails.",
+      },
+      {
+        name: "Chrome",
+        price: "Rs.450.00",
+        duration: "20 min",
+        description: "Mirror-like chrome finish for a modern look.",
+      },
+      {
+        name: "3D Nail Art",
+        price: "Rs.650.00",
         duration: "30 min",
-        description: "Fix broken or damaged nails.",
+        description: "Intricate 3D designs for unique nail art.",
+      },
+    ],
+  },
+  {
+    category: "Pedi & Mani",
+    items: [
+      {
+        name: "Pedicure",
+        price: "Rs.1800.00",
+        duration: "60 min",
+        description: "Complete foot care with relaxing treatment.",
+      },
+      {
+        name: "Pedicure with Gel Color",
+        price: "Rs.2800.00",
+        duration: "75 min",
+        description: "Pedicure service with long-lasting gel color.",
+      },
+      {
+        name: "Pedicure with French Art",
+        price: "Rs.3250.00",
+        duration: "90 min",
+        description: "Classic pedicure with elegant French nail art.",
+      },
+      {
+        name: "Manicure",
+        price: "Rs.1650.00",
+        duration: "45 min",
+        description: "Professional hand care and nail shaping.",
+      },
+      {
+        name: "Manicure with Gel Color",
+        price: "Rs.2650.00",
+        duration: "60 min",
+        description: "Complete manicure with gel color application.",
+      },
+      {
+        name: "Manicure with French Art",
+        price: "Rs.3100.00",
+        duration: "75 min",
+        description: "Manicure service with classic French nail art.",
       },
     ],
   },
@@ -145,3 +183,32 @@ export const TESTIMONIALS = [
     service: "Gel Extensions",
   },
 ];
+
+// Brand and external links
+export const BRAND = {
+  name: "Pretty Tips by Sandali",
+};
+
+export const WHATSAPP = {
+  baseUrl:
+    process.env.NEXT_PUBLIC_WHATSAPP_BUSINESS_URL ||
+    "https://wa.me/94762458004",
+  buildMessageLink: (message?: string) => {
+    const url = new URL(
+      process.env.NEXT_PUBLIC_WHATSAPP_BUSINESS_URL ||
+        "https://wa.me/94762458004"
+    );
+    if (message && message.trim()) {
+      // For wa.me links text must be added as query param
+      // https://wa.me/<number>?text=<encoded_message>
+      url.searchParams.set("text", message);
+    }
+    return url.toString();
+  },
+  buildServiceMessageLink: (serviceName?: string) => {
+    const msg = serviceName
+      ? `Hello, I'd like to book an appointment for: ${serviceName}.`
+      : "Hello, I'd like to book an appointment.";
+    return WHATSAPP.buildMessageLink(msg);
+  },
+};

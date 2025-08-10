@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { CONTACT_INFO, NAVIGATION_ITEMS } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -37,16 +38,29 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href={`https://instagram.com/${CONTACT_INFO.social.instagram}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-brand-pink transition-colors"
               >
                 <Instagram className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href={`https://facebook.com/${CONTACT_INFO.social.facebook}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-brand-pink transition-colors"
               >
                 <Facebook className="h-6 w-6" />
+              </a>
+              <a
+                href={CONTACT_INFO.social.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-brand-pink transition-colors"
+              >
+                {/* Simple TikTok icon using text since lucide-react doesn't ship TikTok */}
+                <span className="text-xl leading-none">🎵</span>
               </a>
             </div>
           </div>
@@ -57,44 +71,22 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/gallery"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Gallery
-                </Link>
-              </li>
+              {NAVIGATION_ITEMS.filter(item => !item.isButton).map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link
                   href="/booking"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Book Appointment
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Contact
                 </Link>
               </li>
             </ul>
@@ -110,31 +102,31 @@ export default function Footer() {
             </h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-2">
-                <MapPin
-                  className="h-5 w-5 mt-0.5"
-                  style={{ color: "#D56497" }}
-                />
+                <MapPin className="h-5 w-5 mt-0.5" style={{ color: "#D56497" }} />
                 <div className="text-gray-300">
-                  <p>123 Beauty Lane</p>
-                  <p>City, State 12345</p>
+                  <a
+                    href={CONTACT_INFO.address.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {CONTACT_INFO.address.full}
+                  </a>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5" style={{ color: "#D56497" }} />
-                <span className="text-gray-300">(555) 123-4567</span>
+                <span className="text-gray-300">{CONTACT_INFO.phone}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5" style={{ color: "#D56497" }} />
-                <span className="text-gray-300">info@prettytips.com</span>
+                <span className="text-gray-300">{CONTACT_INFO.email}</span>
               </div>
               <div className="flex items-start space-x-2">
-                <Clock
-                  className="h-5 w-5 mt-0.5"
-                  style={{ color: "#D56497" }}
-                />
+                <Instagram className="h-5 w-5 mt-0.5" style={{ color: "#D56497" }} />
                 <div className="text-gray-300">
-                  <p>Mon-Sat: 9AM-7PM</p>
-                  <p>Sunday: 10AM-5PM</p>
+                  <p>Instagram: {CONTACT_INFO.social.instagram}</p>
+                  <p>Facebook: {CONTACT_INFO.social.facebook}</p>
                 </div>
               </div>
             </div>

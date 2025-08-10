@@ -1,129 +1,137 @@
 import Link from "next/link";
+import { WHATSAPP } from "@/lib/constants";
 
 export default function ServicesPage() {
   const serviceCategories = [
     {
-      title: "Manicure Services",
+      title: "Full Set",
       services: [
         {
-          name: "Classic Manicure",
-          description:
-            "Traditional nail care with cuticle care, nail shaping, and polish application.",
-          price: "$25",
-          duration: "45 min",
-          includes: [
-            "Nail shaping",
-            "Cuticle care",
-            "Hand massage",
-            "Polish application",
-          ],
+          name: "Normal Color",
+          description: "Complete nail set with normal color polish.",
+          price: "Rs.900.00",
+          duration: "90 min",
+          includes: ["Nail prep", "Shaping", "Polish application"],
         },
         {
-          name: "Gel Manicure",
-          description:
-            "Long-lasting gel polish that maintains shine for up to 3 weeks.",
-          price: "$35",
+          name: "Gel Full Set",
+          description: "Professional gel full set with long-lasting finish.",
+          price: "Rs.4100.00",
+          duration: "120 min",
+          includes: ["Nail prep", "Gel application", "Top coat"],
+        },
+        {
+          name: "Gel-X Full Set",
+          description: "Modern Gel-X extension system for natural-looking nails.",
+          price: "Rs.3000.00",
+          duration: "120 min",
+          includes: ["Extension application", "Shaping", "Polish"],
+        },
+        {
+          name: "Gel Color",
+          description: "Gel color application.",
+          price: "Rs.1000.00",
           duration: "60 min",
-          includes: [
-            "Classic manicure",
-            "Gel base coat",
-            "Gel color",
-            "Gel top coat",
-            "UV curing",
-          ],
+          includes: ["Gel polish", "Top coat"],
         },
         {
-          name: "French Manicure",
-          description:
-            "Elegant classic French tips with natural or colored base.",
-          price: "$30",
-          duration: "50 min",
-          includes: [
-            "Nail prep",
-            "French tip application",
-            "Base color",
-            "Top coat",
-          ],
+          name: "Soak-Off",
+          description: "Safe removal of gel or extensions.",
+          price: "Rs.1200.00",
+          duration: "45 min",
+          includes: ["Removal", "Nail care"],
+        },
+        {
+          name: "Refill",
+          description: "Maintenance and refill for extensions.",
+          price: "Rs.2000.00",
+          duration: "90 min",
+          includes: ["Fill", "Shaping", "Polish"],
         },
       ],
     },
     {
-      title: "Pedicure Services",
+      title: "Add-ons",
       services: [
         {
-          name: "Classic Pedicure",
-          description: "Relaxing foot treatment with exfoliation and massage.",
-          price: "$40",
+          name: "Charms",
+          description: "Decorative nail charms.",
+          price: "Rs.500.00",
+          duration: "15 min",
+          includes: [],
+        },
+        {
+          name: "Glitter",
+          description: "Sparkling glitter finish.",
+          price: "Rs.550.00",
+          duration: "15 min",
+          includes: [],
+        },
+        {
+          name: "Chrome",
+          description: "Mirror-like chrome finish.",
+          price: "Rs.450.00",
+          duration: "20 min",
+          includes: [],
+        },
+        {
+          name: "3D Nail Art",
+          description: "Intricate 3D designs.",
+          price: "Rs.650.00",
+          duration: "30 min",
+          includes: [],
+        },
+      ],
+    },
+    {
+      title: "Pedi & Mani",
+      services: [
+        {
+          name: "Pedicure",
+          description: "Complete foot care.",
+          price: "Rs.1800.00",
           duration: "60 min",
           includes: [
-            "Foot soak",
-            "Nail trimming",
-            "Callus removal",
-            "Foot massage",
+            "Soak",
+            "Cuticle care",
+            "Massage",
             "Polish",
           ],
         },
         {
-          name: "Spa Pedicure",
-          description:
-            "Luxurious treatment with extended massage and premium products.",
-          price: "$55",
+          name: "Pedicure with Gel Color",
+          description: "Pedicure with gel color.",
+          price: "Rs.2800.00",
           duration: "75 min",
-          includes: [
-            "Everything in classic",
-            "Extended massage",
-            "Paraffin wax",
-            "Hot towels",
-          ],
+          includes: ["Pedicure", "Gel polish"],
         },
         {
-          name: "Gel Pedicure",
-          description: "Long-lasting gel polish for your toes.",
-          price: "$50",
-          duration: "70 min",
-          includes: ["Classic pedicure", "Gel polish application", "UV curing"],
-        },
-      ],
-    },
-    {
-      title: "Nail Enhancements",
-      services: [
-        {
-          name: "Gel Extensions",
-          description: "Professional nail extensions for length and strength.",
-          price: "$55",
+          name: "Pedicure with French Art",
+          description: "Classic French design.",
+          price: "Rs.3250.00",
           duration: "90 min",
-          includes: [
-            "Nail prep",
-            "Extension application",
-            "Shaping",
-            "Gel polish",
-            "Aftercare",
-          ],
+          includes: ["Pedicure", "French art"],
         },
         {
-          name: "Nail Repair",
-          description: "Fix broken or damaged nails.",
-          price: "$15",
-          duration: "30 min",
-          includes: [
-            "Assessment",
-            "Repair work",
-            "Blending",
-            "Polish touch-up",
-          ],
+          name: "Manicure",
+          description: "Professional hand care.",
+          price: "Rs.1650.00",
+          duration: "45 min",
+          includes: ["Shaping", "Cuticle care", "Polish"],
         },
         {
-          name: "Nail Art",
-          description: "Custom designs and artistic decorations.",
-          price: "From $15",
-          duration: "30-60 min",
-          includes: [
-            "Design consultation",
-            "Custom artwork",
-            "Premium materials",
-            "Protective coating",
-          ],
+          name: "Manicure with Gel Color",
+          description: "Manicure with gel color.",
+          price: "Rs.2650.00",
+          duration: "60 min",
+          includes: ["Manicure", "Gel polish"],
+        },
+        {
+          name: "Manicure with French Art",
+          description: "Manicure with French art.",
+          price: "Rs.3100.00",
+          duration: "75 min",
+          includes: ["Manicure", "French art"],
         },
       ],
     },
@@ -131,29 +139,24 @@ export default function ServicesPage() {
 
   const addOnServices = [
     {
-      name: "Paraffin Wax Treatment",
-      price: "$10",
-      description: "Moisturizing paraffin dip",
+      name: "Charms",
+      price: "Rs.500.00",
+      description: "Decorative nail charms",
     },
     {
-      name: "Callus Treatment",
-      price: "$15",
-      description: "Extra callus removal and softening",
+      name: "Glitter",
+      price: "Rs.550.00",
+      description: "Sparkling glitter finish",
     },
     {
-      name: "French Tips",
-      price: "$5",
-      description: "Add elegant French tips to any service",
+      name: "Chrome",
+      price: "Rs.450.00",
+      description: "Mirror-like chrome finish",
     },
     {
-      name: "Nail Art (per nail)",
-      price: "$3-8",
-      description: "Simple to complex designs",
-    },
-    {
-      name: "Gel Removal",
-      price: "$10",
-      description: "Safe gel polish removal",
+      name: "3D Nail Art",
+      price: "Rs.650.00",
+      description: "Intricate 3D designs",
     },
   ];
 
@@ -167,8 +170,7 @@ export default function ServicesPage() {
               Our <span className="text-brand-pink">Services</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive nail care services designed to pamper, beautify, and
-              maintain the health of your hands and feet.
+              Official price list for Pretty Tips by Sandali
             </p>
           </div>
         </div>
@@ -210,29 +212,30 @@ export default function ServicesPage() {
                     </span>
                   </div>
 
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Includes:
-                    </h4>
-                    <ul className="space-y-1">
-                      {service.includes.map((item, itemIndex) => (
-                        <li
-                          key={itemIndex}
-                          className="flex items-center space-x-2 text-sm text-gray-600"
-                        >
-                          <div className="w-1.5 h-1.5 bg-brand-pink rounded-full"></div>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {service.includes && service.includes.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        Includes:
+                      </h4>
+                      <ul className="space-y-1">
+                        {service.includes.map((item: string, itemIndex: number) => (
+                          <li key={itemIndex} className="flex items-center space-x-2 text-sm text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-brand-pink rounded-full"></div>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-                  <Link
-                    href="/booking"
+                  <a
+                    href={WHATSAPP.buildServiceMessageLink(`${category.title} - ${service.name}`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full bg-brand-pink text-white text-center py-3 rounded-full hover:bg-brand-pink-dark transition-colors"
                   >
-                    Book Now
-                  </Link>
+                    Book on WhatsApp
+                  </a>
                 </div>
               ))}
             </div>
@@ -257,11 +260,17 @@ export default function ServicesPage() {
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-bold text-gray-800">{addon.name}</h3>
-                  <span className="text-brand-pink font-bold">
-                    {addon.price}
-                  </span>
+                  <span className="text-brand-pink font-bold">{addon.price}</span>
                 </div>
-                <p className="text-gray-600 text-sm">{addon.description}</p>
+                <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
+                <a
+                  href={WHATSAPP.buildServiceMessageLink(`Add-on: ${addon.name}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-brand-pink text-white text-center py-2 rounded-full hover:bg-brand-pink-dark transition-colors text-sm"
+                >
+                  Add via WhatsApp
+                </a>
               </div>
             ))}
           </div>
@@ -276,11 +285,11 @@ export default function ServicesPage() {
               Pricing Information
             </h3>
             <p className="text-gray-600 mb-4">
-              All prices are starting prices and may vary based on nail length,
+              All prices are per flyer and may vary based on nail length,
               condition, and design complexity.
             </p>
             <p className="text-sm text-gray-500">
-              Prices subject to change. Please call for current pricing and
+              Prices subject to change. Please WhatsApp us for current pricing and
               availability.
             </p>
           </div>
@@ -292,14 +301,16 @@ export default function ServicesPage() {
         <div className="container-padding text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Book?</h2>
           <p className="text-xl mb-8">
-            Choose your perfect service and book your appointment today!
+            Choose your perfect service and message us on WhatsApp to book.
           </p>
-          <Link
-            href="/booking"
+          <a
+            href={WHATSAPP.buildMessageLink("Hello, I'd like to book an appointment.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white text-brand-pink px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors"
           >
-            Book Your Appointment
-          </Link>
+            Book on WhatsApp
+          </a>
         </div>
       </section>
     </div>

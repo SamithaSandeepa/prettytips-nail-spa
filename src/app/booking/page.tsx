@@ -1,71 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import { WHATSAPP } from "@/lib/constants";
 
 export default function BookingPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    date: "",
-    time: "",
-    notes: "",
-  });
+  const [service, setService] = useState("");
 
   const services = [
-    "Classic Manicure - $25",
-    "Gel Manicure - $35",
-    "French Manicure - $30",
-    "Classic Pedicure - $40",
-    "Spa Pedicure - $55",
-    "Gel Pedicure - $50",
-    "Gel Extensions - $55",
-    "Nail Art - From $15",
-    "Nail Repair - $15",
+    "Normal Color (Full Set) - Rs.900.00",
+    "Gel Full Set - Rs.4100.00",
+    "Gel-X Full Set - Rs.3000.00",
+    "Gel Color - Rs.1000.00",
+    "Soak-Off - Rs.1200.00",
+    "Refill - Rs.2000.00",
+    "Pedicure - Rs.1800.00",
+    "Pedicure with Gel Color - Rs.2800.00",
+    "Pedicure with French Art - Rs.3250.00",
+    "Manicure - Rs.1650.00",
+    "Manicure with Gel Color - Rs.2650.00",
+    "Manicure with French Art - Rs.3100.00",
   ];
 
-  const timeSlots = [
-    "9:00 AM",
-    "9:30 AM",
-    "10:00 AM",
-    "10:30 AM",
-    "11:00 AM",
-    "11:30 AM",
-    "12:00 PM",
-    "12:30 PM",
-    "1:00 PM",
-    "1:30 PM",
-    "2:00 PM",
-    "2:30 PM",
-    "3:00 PM",
-    "3:30 PM",
-    "4:00 PM",
-    "4:30 PM",
-    "5:00 PM",
-    "5:30 PM",
-    "6:00 PM",
-  ];
-
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    alert(
-      "Booking request submitted! We will contact you soon to confirm your appointment."
+  const handleWhatsApp = () => {
+    window.open(
+      WHATSAPP.buildServiceMessageLink(service || undefined),
+      "_blank"
     );
-    console.log("Booking data:", formData);
   };
 
   return (
@@ -78,255 +38,46 @@ export default function BookingPage() {
               Book Your <span className="text-brand-pink">Appointment</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Schedule your perfect nail care experience. We&apos;ll confirm
-              your appointment within 24 hours.
+              For now, bookings are handled via WhatsApp. Select a service
+              (optional) and message us.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Booking Form */}
       <section className="py-20 bg-white">
         <div className="container-padding">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Form */}
-              <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-8">
-                  Appointment Details
-                </h2>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="service"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Select Service *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      required
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                    >
-                      <option value="">Choose a service</option>
-                      {services.map((service, index) => (
-                        <option key={index} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label
-                        htmlFor="date"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Preferred Date *
-                      </label>
-                      <input
-                        type="date"
-                        id="date"
-                        name="date"
-                        required
-                        value={formData.date}
-                        onChange={handleInputChange}
-                        min={new Date().toISOString().split("T")[0]}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="time"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Preferred Time *
-                      </label>
-                      <select
-                        id="time"
-                        name="time"
-                        required
-                        value={formData.time}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                      >
-                        <option value="">Select time</option>
-                        {timeSlots.map((time, index) => (
-                          <option key={index} value={time}>
-                            {time}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="notes"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Special Requests or Notes
-                    </label>
-                    <textarea
-                      id="notes"
-                      name="notes"
-                      rows={4}
-                      value={formData.notes}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                      placeholder="Any special requests, allergies, or additional information..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-brand-pink text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-brand-pink-dark transition-colors"
-                  >
-                    Submit Booking Request
-                  </button>
-                </form>
+          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select Service (optional)
+                </label>
+                <select
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent"
+                >
+                  <option value="">Choose a service</option>
+                  {services.map((s, i) => (
+                    <option key={i} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
               </div>
 
-              {/* Info Panel */}
-              <div className="space-y-8">
-                {/* Contact Info */}
-                <div className="bg-gradient-brand-light rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                    Contact Information
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-brand-pink-light rounded-full flex items-center justify-center">
-                        📞
-                      </div>
-                      <div>
-                        <p className="font-semibold">Phone</p>
-                        <p className="text-gray-600">(555) 123-4567</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-brand-pink-light rounded-full flex items-center justify-center">
-                        📧
-                      </div>
-                      <div>
-                        <p className="font-semibold">Email</p>
-                        <p className="text-gray-600">info@prettytips.com</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-brand-pink-light rounded-full flex items-center justify-center">
-                        📍
-                      </div>
-                      <div>
-                        <p className="font-semibold">Address</p>
-                        <p className="text-gray-600">
-                          123 Beauty Lane
-                          <br />
-                          City, State 12345
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <button
+                onClick={handleWhatsApp}
+                className="w-full bg-brand-pink text-white py-4 rounded-full text-lg font-semibold hover:bg-brand-pink-dark transition-colors"
+              >
+                Continue on WhatsApp
+              </button>
 
-                {/* Hours */}
-                <div className="bg-white rounded-2xl p-8 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                    Business Hours
-                  </h3>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Monday - Friday</span>
-                      <span>9:00 AM - 7:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Saturday</span>
-                      <span>9:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span>10:00 AM - 5:00 PM</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Policies */}
-                <div className="bg-white rounded-2xl p-8 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                    Booking Policies
-                  </h3>
-                  <div className="space-y-3 text-sm text-gray-600">
-                    <p>• 24-hour advance booking required</p>
-                    <p>• Cancellations must be made 24 hours in advance</p>
-                    <p>• Late arrivals may result in shortened service time</p>
-                    <p>• Payment accepted: Cash, Card, Venmo, Zelle</p>
-                    <p>• First-time clients: Please arrive 15 minutes early</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-center text-sm text-gray-500">
+                You will be redirected to our WhatsApp Business chat with a
+                pre-filled message.
+              </p>
             </div>
           </div>
         </div>
