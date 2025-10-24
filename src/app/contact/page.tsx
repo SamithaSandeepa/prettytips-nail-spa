@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { CONTACT_INFO, WHATSAPP } from "@/lib/constants";
+import { PiTiktokLogoBold } from "react-icons/pi";
 
 export default function ContactPage() {
   return (
@@ -124,25 +125,48 @@ export default function ContactPage() {
                 <Facebook className="h-6 w-6" />
                 <span>{CONTACT_INFO.social.facebook}</span>
               </a>
+              <a
+                href={CONTACT_INFO.social.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-brand-pink hover:underline"
+              >
+                <PiTiktokLogoBold className="h-6 w-6" />
+                <span>TikTok</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-20 bg-gray-100">
         <div className="container-padding">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Find Us</h2>
-            <p className="text-xl text-gray-600">
-              Location details available on request
-            </p>
+            <p className="text-xl text-gray-600">{CONTACT_INFO.address.full}</p>
+            <a
+              href={`https://maps.apple.com/?q=${encodeURIComponent(
+                CONTACT_INFO.address.full
+              )}&ll=${CONTACT_INFO.address.lat},${CONTACT_INFO.address.lng}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 text-brand-pink hover:underline"
+            >
+              Open in Apple Maps
+            </a>
           </div>
 
-          <div className="bg-gradient-to-br from-pink-200 to-purple-200 rounded-2xl p-20 text-center">
-            <div className="text-6xl mb-4">🗺️</div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">Map</h3>
-            <p className="text-gray-600">{CONTACT_INFO.address.full}</p>
+          <div className="rounded-2xl overflow-hidden shadow-xl bg-white">
+            <iframe
+              title="Pretty Tips Location"
+              src={`https://www.google.com/maps?q=${CONTACT_INFO.address.lat},${CONTACT_INFO.address.lng}&z=15&output=embed`}
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>

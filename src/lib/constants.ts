@@ -7,9 +7,11 @@ export const CONTACT_INFO = {
     city: "Sri Lanka",
     state: "",
     zip: "",
-    full: "Kadawatha Road, Sri Lanka",
+    full: "Kadawatha Road, Wennappuwa, Sri Lanka",
     mapUrl:
       "https://maps.apple.com/place?address=Kadawatha%20Road,%20Sri%20Lanka&coordinate=7.335300,79.841600&name=Kadawatha%20Road&map=explore",
+    lat: 7.3353,
+    lng: 79.8416,
   },
   social: {
     instagram: "prettytips.lk",

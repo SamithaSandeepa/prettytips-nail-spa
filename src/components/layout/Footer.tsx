@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { CONTACT_INFO, NAVIGATION_ITEMS } from "@/lib/constants";
+import { PiTiktokLogoBold } from "react-icons/pi";
 
 export default function Footer() {
   return (
@@ -58,9 +59,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-brand-pink transition-colors"
+                aria-label="TikTok"
               >
-                {/* Simple TikTok icon using text since lucide-react doesn't ship TikTok */}
-                <span className="text-xl leading-none">🎵</span>
+                <PiTiktokLogoBold className="h-6 w-6" />
               </a>
             </div>
           </div>
