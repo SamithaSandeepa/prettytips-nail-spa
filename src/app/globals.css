@@ -1,51 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-pink-light: #e8a5c8;
+  --color-brand-pink: #d56497;
+  --color-brand-pink-dark: #b84d7a;
+
+  --font-family-serif: var(--font-playfair);
+  --font-family-script: var(--font-dancing-script);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --brand-pink: #d56497;
-}
-
-/* Custom brand color utilities */
-.bg-brand-pink {
-  background-color: #d56497;
-}
-.text-brand-pink {
-  color: #d56497;
-}
-.border-brand-pink {
-  border-color: #d56497;
-}
-.hover\:bg-brand-pink:hover {
-  background-color: #d56497;
-}
-.hover\:text-brand-pink:hover {
-  color: #d56497;
-}
-
-/* Brand color variants */
-.bg-brand-pink-light {
-  background-color: #e8a5c8;
-}
-.bg-brand-pink-dark {
-  background-color: #b84d7a;
-}
-.text-brand-pink-light {
-  color: #e8a5c8;
-}
-.text-brand-pink-dark {
-  color: #b84d7a;
-}
-.hover\:bg-brand-pink-dark:hover {
-  background-color: #b84d7a;
-}
-
-/* Brand gradients */
-.bg-gradient-brand {
-  background: linear-gradient(135deg, #d56497 0%, #b84d7a 100%);
-}
-.bg-gradient-brand-light {
-  background: linear-gradient(135deg, #f3d4e5 0%, #e8a5c8 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -95,4 +61,13 @@ body {
   backdrop-filter: blur(8px);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Brand gradients */
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #d56497 0%, #b84d7a 100%);
+}
+
+.bg-gradient-brand-light {
+  background: linear-gradient(135deg, #f3d4e5 0%, #e8a5c8 100%);
 }

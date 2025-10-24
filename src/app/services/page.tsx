@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { WHATSAPP } from "@/lib/constants";
 
 export default function ServicesPage() {
@@ -22,7 +21,8 @@ export default function ServicesPage() {
         },
         {
           name: "Gel-X Full Set",
-          description: "Modern Gel-X extension system for natural-looking nails.",
+          description:
+            "Modern Gel-X extension system for natural-looking nails.",
           price: "Rs.3000.00",
           duration: "120 min",
           includes: ["Extension application", "Shaping", "Polish"],
@@ -91,12 +91,7 @@ export default function ServicesPage() {
           description: "Complete foot care.",
           price: "Rs.1800.00",
           duration: "60 min",
-          includes: [
-            "Soak",
-            "Cuticle care",
-            "Massage",
-            "Polish",
-          ],
+          includes: ["Soak", "Cuticle care", "Massage", "Polish"],
         },
         {
           name: "Pedicure with Gel Color",
@@ -170,7 +165,7 @@ export default function ServicesPage() {
               Our <span className="text-brand-pink">Services</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Official price list for Pretty Tips by Sandali
+              Explore our full range of nail and beauty services below.
             </p>
           </div>
         </div>
@@ -199,9 +194,9 @@ export default function ServicesPage() {
                     <h3 className="text-xl font-bold text-gray-800">
                       {service.name}
                     </h3>
-                    <span className="text-2xl font-bold text-brand-pink">
+                    {/* <span className="text-2xl font-bold text-brand-pink">
                       {service.price}
-                    </span>
+                    </span> */}
                   </div>
 
                   <p className="text-gray-600 mb-4">{service.description}</p>
@@ -218,18 +213,25 @@ export default function ServicesPage() {
                         Includes:
                       </h4>
                       <ul className="space-y-1">
-                        {service.includes.map((item: string, itemIndex: number) => (
-                          <li key={itemIndex} className="flex items-center space-x-2 text-sm text-gray-600">
-                            <div className="w-1.5 h-1.5 bg-brand-pink rounded-full"></div>
-                            <span>{item}</span>
-                          </li>
-                        ))}
+                        {service.includes.map(
+                          (item: string, itemIndex: number) => (
+                            <li
+                              key={itemIndex}
+                              className="flex items-center space-x-2 text-sm text-gray-600"
+                            >
+                              <div className="w-1.5 h-1.5 bg-brand-pink rounded-full"></div>
+                              <span>{item}</span>
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
                   )}
 
                   <a
-                    href={WHATSAPP.buildServiceMessageLink(`${category.title} - ${service.name}`)}
+                    href={WHATSAPP.buildServiceMessageLink(
+                      `${category.title} - ${service.name}`
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full bg-brand-pink text-white text-center py-3 rounded-full hover:bg-brand-pink-dark transition-colors"
@@ -260,11 +262,17 @@ export default function ServicesPage() {
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-bold text-gray-800">{addon.name}</h3>
-                  <span className="text-brand-pink font-bold">{addon.price}</span>
+                  {/* <span className="text-brand-pink font-bold">
+                    {addon.price}
+                  </span> */}
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
+                <p className="text-gray-600 text-sm mb-4">
+                  {addon.description}
+                </p>
                 <a
-                  href={WHATSAPP.buildServiceMessageLink(`Add-on: ${addon.name}`)}
+                  href={WHATSAPP.buildServiceMessageLink(
+                    `Add-on: ${addon.name}`
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-brand-pink text-white text-center py-2 rounded-full hover:bg-brand-pink-dark transition-colors text-sm"
@@ -289,8 +297,8 @@ export default function ServicesPage() {
               condition, and design complexity.
             </p>
             <p className="text-sm text-gray-500">
-              Prices subject to change. Please WhatsApp us for current pricing and
-              availability.
+              Prices subject to change. Please WhatsApp us for current pricing
+              and availability.
             </p>
           </div>
         </div>
@@ -304,7 +312,9 @@ export default function ServicesPage() {
             Choose your perfect service and message us on WhatsApp to book.
           </p>
           <a
-            href={WHATSAPP.buildMessageLink("Hello, I'd like to book an appointment.")}
+            href={WHATSAPP.buildMessageLink(
+              "Hello, I'd like to book an appointment."
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-brand-pink px-8 py-4 text-lg font-semibold rounded-full hover:bg-gray-100 transition-colors"
