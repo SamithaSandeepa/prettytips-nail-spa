@@ -73,12 +73,12 @@ export default function Services() {
                 {service.description}
               </p>
               <div className="flex justify-between items-center mb-4">
-                <span className="text-brand-pink font-bold text-lg">
+                {/* <span className="text-brand-pink font-bold text-lg">
                   {service.price}
                 </span>
                 <span className="text-gray-500 text-sm">
                   {service.duration}
-                </span>
+                </span> */}
               </div>
               <a
                 href={WHATSAPP.buildServiceMessageLink(service.title)}
@@ -97,7 +97,7 @@ export default function Services() {
             href="/services"
             className="inline-block border-2 border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-white px-8 py-3 rounded-full transition-colors text-lg"
           >
-            View Full Price List
+            View All Services
           </Link>
         </div>
       </div>
